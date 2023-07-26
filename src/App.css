@@ -1,0 +1,22 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* App.css */
+.light-mode  {
+  /* Set your default background and text color here */
+  background-color: white;
+  color: black;
+}
+
+.light-mode .night-mode-toggle {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode .night-mode-toggle {
+  background-color: black;
+  color: white;
+}
