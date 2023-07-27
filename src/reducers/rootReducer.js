@@ -1,5 +1,3 @@
-// rootReducer.js
-
 import { combineReducers } from 'redux';
 import mapReducer from './mapReducer';
 

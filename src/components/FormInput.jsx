@@ -8,20 +8,18 @@ const { Option } = Select;
 const FormInput = () => {
   const dispatch = useDispatch();
   const selectedRegion = useSelector((state) => state.map.selectedRegion);
+  const isNightMode = useSelector((state) => state.map.isNightMode);
 
   const handleRegionChange = (value) => {
-    // Dispatch an action to update the selectedRegion in the Redux store
     dispatch(updateRegion(value));
   };
 
   const handleLoadButtonClick = () => {
-    // Dispatch an action to fetch the region info based on the selectedRegion
-    // and update the regionInfo in the Redux store
     dispatch(fetchRegionInfo(selectedRegion));
   };
 
   return (
-    <div>
+    <div className={isNightMode ? 'dark-mode' : 'light-mode'}>
       <Select
         defaultValue="Select Region"
         style={{ width: 200 }}

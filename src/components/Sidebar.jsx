@@ -2,18 +2,16 @@ import React from 'react';
 import { Layout, Switch } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleNightMode } from '../actions/mapActions';
+import '../App.css'; 
 
 const { Sider } = Layout;
 
 const Sidebar = () => {
-  // Get the current night mode state from the Redux store using useSelector hook
   const isNightMode = useSelector((state) => state.map.isNightMode);
 
-  // Dispatch the toggleNightMode action to update the night mode state in the Redux store
   const dispatch = useDispatch();
 
   const handleNightModeToggle = () => {
-    // Dispatch the toggleNightMode action
     dispatch(toggleNightMode());
   };
 
@@ -23,7 +21,6 @@ const Sidebar = () => {
         <Switch checked={isNightMode} onChange={handleNightModeToggle} />
         <span>Night Mode</span>
       </div>
-      {/* Add other sidebar content here */}
     </Sider>
   );
 };

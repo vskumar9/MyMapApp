@@ -2,11 +2,7 @@ body, html {
   margin: 0;
   padding: 0;
 }
-
-
-/* App.css */
 .light-mode  {
-  /* Set your default background and text color here */
   background-color: white;
   color: black;
 }

@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import { Layout, Button } from 'antd';
 import { UserOutlined, LogoutOutlined, ProfileOutlined } from '@ant-design/icons';
-// import { toggleNightMode } from '../actions/mapActions';
 import { useSelector } from 'react-redux';
 
 
 const { Header } = Layout;
-
-
-
-
-
 const HeaderSection = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const isNightMode = useSelector((state) => state.map.isNightMode);
@@ -47,10 +41,6 @@ const HeaderSection = () => {
           </Button>
         )}
       </div>
-      {/* <div>
-        <Switch checked={isNightMode} onChange={handleNightModeToggle} />
-        <span>Night Mode</span>
-      </div> */}
     </Header>
   );
 };

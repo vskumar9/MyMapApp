@@ -7,7 +7,6 @@ const initialState = {
   selectedRegion: '',
   regionInfo: null,
   isNightMode: false,
-  // other initial state properties
 };
 
 const mapReducer = (state = initialState, action) => {
@@ -27,7 +26,6 @@ const mapReducer = (state = initialState, action) => {
           ...state,
           isNightMode: !state.isNightMode,
         };
-    // handle other cases if needed
     default:
       return state;
   }
