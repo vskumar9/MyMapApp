@@ -1,14 +1,19 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const API_ENDPOINT = 'https://api.example.com/regions'; 
+const BASE_URL = 'https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png';
+const ACCESS_TOKEN = 'XCXmyGjWPAMXZrmZPIpR';
+
 const fetchMapData = async (selectedRegion) => {
   try {
-    // Fetch map tiles from OpenStreetMap API
-    const response = await axios.get(BASE_URL);
+    // Fetch map tiles from MapTiler API with access token
+    const response = await axios.get(BASE_URL, {
+      params: {
+        access_token: ACCESS_TOKEN,
+      },
+    });
 
-    // Fetch additional region-specific data from own API
-    const regionDataResponse = await axios.get(`${API_ENDPOINT}/${selectedRegion}`);
+    // Fetch additional region-specific data from your own API
+    const regionDataResponse = await axios.get(`YOUR_OWN_API_ENDPOINT/${selectedRegion}`);
     const regionData = regionDataResponse.data;
 
     // Combine map data and region-specific data into a single object and return it
